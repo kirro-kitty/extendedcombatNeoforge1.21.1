@@ -1,0 +1,12 @@
+{
+  "type": "extendedcombat:add_item",
+  "conditions": [
+    {
+      "condition": "neoforge:loot_table_id",
+      "loot_table_id": "minecraft:chests/nether_bridge"
+    }
+  ],
+  "items": [
+    "extendedcombat:black_apple_seed"
+  ]
+}

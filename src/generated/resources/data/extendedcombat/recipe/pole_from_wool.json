@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "L": {
+      "tag": "minecraft:wool"
+    },
+    "S": {
+      "tag": "minecraft:planks"
+    }
+  },
+  "pattern": [
+    "S  ",
+    "SL ",
+    "S  "
+  ],
+  "result": {
+    "count": 1,
+    "id": "extendedcombat:pole"
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "L": {
+      "tag": "minecraft:wool"
+    },
+    "S": {
+      "item": "minecraft:stick"
+    }
+  },
+  "pattern": [
+    " LS",
+    "LSL",
+    "SL "
+  ],
+  "result": {
+    "count": 1,
+    "id": "extendedcombat:handle"
+  }
+}
