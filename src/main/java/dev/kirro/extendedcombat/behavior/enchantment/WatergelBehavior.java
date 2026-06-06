@@ -22,24 +22,6 @@ public class WatergelBehavior implements TickingAttachment, Ability {
     }
 
     @Override
-    public void readFromNbt(CompoundTag tag, HolderLookup.Provider holderLookup) {
-        canRecharge = tag.getBoolean("CanRecharge");
-        cooldown = tag.getInt("Cooldown");
-        lastCooldown = tag.getInt("LastCooldown");
-        usageCooldown = tag.getInt("UsageCooldown");
-        usesLeft = tag.getInt("UsesLeft");
-    }
-
-    @Override
-    public void writeToNbt(CompoundTag tag, HolderLookup.Provider holderLookup) {
-        tag.putBoolean("CanRecharge", canRecharge);
-        tag.putInt("Cooldown", cooldown);
-        tag.putInt("LastCooldown", lastCooldown);
-        tag.putInt("UsageCooldown", usageCooldown);
-        tag.putInt("UsesLeft", usesLeft);
-    }
-
-    @Override
     public EquipmentSlot slot() {
         return EquipmentSlot.LEGS;
     }

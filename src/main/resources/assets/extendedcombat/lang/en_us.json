@@ -119,8 +119,9 @@
   "enchantment.extendedcombat.swiftness": "Swiftness",
   "enchantment.extendedcombat.watergel": "Watergel",
   "enchantment.extendedcombat.wavedash": "Wavedash",
+  "enchantment.extendedcombat.warden_sight": "Warden Sight",
 
-  "Enchantment Descriptions Compat": "",
+  "Enchantment Descriptions Compat": ":3",
   "enchantment.extendedcombat.dash.desc": "Allows for a dash action to be performed midair",
   "enchantment.extendedcombat.air_jump.desc": "Allows for jumping more times in midair",
   "enchantment.extendedcombat.blink.desc": "Gives the player total invisibility for a short time",
@@ -134,6 +135,7 @@
   "enchantment.extendedcombat.swiftness.desc": "Increases maneuverability while in air",
   "enchantment.extendedcombat.watergel.desc": "Allows for using riptide outside of water for a set number of uses, rechargeable while in water or rain",
   "enchantment.extendedcombat.wavedash.desc": "Allows user to chain dashes if jumping in short succession after dash action is performed. (requires dash to function, does nothing on its own)",
+  "enchantment.extendedcombat.warden_sight.desc": "Blinds the user, but allows them to perceive all entities around themselves",
 
   "key.extendedcombat.dash": "Dash",
   "key.extendedcombat.blink": "Blink",

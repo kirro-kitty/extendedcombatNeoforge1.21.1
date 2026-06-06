@@ -28,20 +28,6 @@ public class DashBehavior implements TickingAttachment, Ability {
     }
 
     @Override
-    public void readFromNbt(CompoundTag nbtCompound, HolderLookup.Provider wrapperLookup) {
-        canRecharge = nbtCompound.getBoolean("CanRecharge");
-        cooldown = nbtCompound.getInt("Cooldown");
-        lastCooldown = nbtCompound.getInt("LastCooldown");
-    }
-
-    @Override
-    public void writeToNbt(CompoundTag tag, HolderLookup.Provider holderLookup) {
-        tag.putBoolean("CanRecharge", canRecharge);
-        tag.putInt("Cooldown", cooldown);
-        tag.putInt("LastCooldown", lastCooldown);
-    }
-
-    @Override
     public EquipmentSlot slot() {
         return EquipmentSlot.LEGS;
     }

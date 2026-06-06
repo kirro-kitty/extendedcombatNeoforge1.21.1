@@ -197,17 +197,17 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
 
         // sleeves
         ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.CHAINMAIL_SLEEVE)
+                .pattern("E ")
                 .pattern("W ")
-                .pattern("WE")
-                .pattern("W ")
+                .pattern("E ")
                 .define('W', ItemTags.WOOL)
                 .define('E', Items.IRON_NUGGET)
                 .unlockedBy(getHasName(Items.IRON_NUGGET), has(ItemTags.WOOL))
                 .save(recipeOutput, ExtendedCombat.id("chainmail_sleeve"));
         ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.LEATHER_SLEEVE)
+                .pattern("E ")
                 .pattern("W ")
-                .pattern("WE")
-                .pattern("W ")
+                .pattern("E ")
                 .define('W', ItemTags.WOOL)
                 .define('E', Items.LEATHER)
                 .unlockedBy(getHasName(Items.LEATHER), has(ItemTags.WOOL))
@@ -262,7 +262,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .save(recipeOutput, ExtendedCombat.id("echo_steel_sleeve"));
         ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.WOOL_SLEEVE)
                 .pattern("W ")
-                .pattern("WW")
+                .pattern("W ")
                 .pattern("W ")
                 .define('W', ItemTags.WOOL)
                 .unlockedBy(getHasName(Items.WHITE_WOOL), has(ItemTags.WOOL))

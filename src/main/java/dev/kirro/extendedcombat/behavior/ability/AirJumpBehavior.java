@@ -25,26 +25,6 @@ public class AirJumpBehavior implements TickingAttachment, Ability {
     }
 
     @Override
-    public void readFromNbt(CompoundTag tag, HolderLookup.Provider holderLookup) {
-        canRecharge = tag.getBoolean("CanRecharge");
-        cooldown = tag.getInt("Cooldown");
-        lastCooldown = tag.getInt("LastCooldown");
-        jumpCooldown = tag.getInt("JumpCooldown");
-        jumpsLeft = tag.getInt("JumpsLeft");
-        ticksInAir = tag.getInt("TicksInAir");
-    }
-
-    @Override
-    public void writeToNbt(CompoundTag tag, HolderLookup.Provider holderLookup) {
-        tag.putBoolean("CanRecharge", canRecharge);
-        tag.putInt("Cooldown", cooldown);
-        tag.putInt("LastCooldown", lastCooldown);
-        tag.putInt("JumpCooldown", jumpCooldown);
-        tag.putInt("JumpsLeft", jumpsLeft);
-        tag.putInt("TicksInAir", ticksInAir);
-    }
-
-    @Override
     public EquipmentSlot slot() {
         return EquipmentSlot.FEET;
     }

@@ -10,9 +10,9 @@
     }
   },
   "pattern": [
+    "E ",
     "W ",
-    "WE",
-    "W "
+    "E "
   ],
   "result": {
     "count": 1,

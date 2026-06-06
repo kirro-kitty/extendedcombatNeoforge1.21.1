@@ -2,6 +2,7 @@ package dev.kirro.extendedcombat.item;
 
 import dev.kirro.extendedcombat.ExtendedCombat;
 import dev.kirro.extendedcombat.block.ModBlocks;
+import dev.kirro.extendedcombat.data.ModDataComponents;
 import dev.kirro.extendedcombat.item.custom.*;
 import dev.kirro.extendedcombat.tags.ModEnchantmentTags;
 import net.minecraft.core.HolderLookup;
@@ -111,7 +112,7 @@ public interface ModItems {
             () -> new ModArmorItem(ModArmorMaterials.NETHER_STEEL, ArmorItem.Type.BOOTS, new Item.Properties().fireResistant().stacksTo(1).durability(8124)));
 
     DeferredItem<Item> ECHO_STEEL_HELMET = register("echo_steel_helmet",
-            () -> new ModArmorItem(ModArmorMaterials.ECHO_STEEL, ArmorItem.Type.HELMET, new Item.Properties().fireResistant().stacksTo(1).durability(9124)));
+            () -> new ModArmorItem(ModArmorMaterials.ECHO_STEEL, ArmorItem.Type.HELMET, new Item.Properties().fireResistant().stacksTo(1).durability(9124).component(ModDataComponents.HIDDEN, false)));
     DeferredItem<Item> ECHO_STEEL_CHESTPLATE = register("echo_steel_chestplate",
             () -> new ModArmorItem(ModArmorMaterials.ECHO_STEEL, ArmorItem.Type.CHESTPLATE, new Item.Properties().fireResistant().stacksTo(1).durability(9124)));
     DeferredItem<Item> ECHO_STEEL_LEGGINGS = register("echo_steel_leggings",

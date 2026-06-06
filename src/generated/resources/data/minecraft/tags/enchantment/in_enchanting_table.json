@@ -47,6 +47,10 @@
     {
       "id": "extendedcombat:wavedash",
       "required": false
+    },
+    {
+      "id": "extendedcombat:warden_sight",
+      "required": false
     }
   ]
 }

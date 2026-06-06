@@ -23,18 +23,6 @@ public class AirMovementBehavior implements TickingAttachment, Ability {
     }
 
     @Override
-    public void readFromNbt(CompoundTag nbt, HolderLookup.Provider wrapperLookup) {
-        resetDelay = nbt.getInt("ResetDelay");
-        airTime = nbt.getInt("AirTime");
-    }
-
-    @Override
-    public void writeToNbt(CompoundTag nbt, HolderLookup.Provider wrapperLookup) {
-        nbt.putInt("ResetDelay", resetDelay);
-        nbt.putInt("AirTime", airTime);
-    }
-
-    @Override
     public EquipmentSlot slot() {
         return EquipmentSlot.CHEST;
     }

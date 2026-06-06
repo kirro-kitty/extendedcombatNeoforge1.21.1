@@ -21,6 +21,7 @@ import net.minecraft.client.renderer.texture.OverlayTexture;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.EquipmentSlot;
+import net.minecraft.world.entity.HumanoidArm;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.item.ItemStack;
 import net.neoforged.neoforge.client.extensions.common.IClientItemExtensions;
@@ -59,7 +60,8 @@ public abstract class PlayerRendererMixin extends LivingEntityRenderer<AbstractC
 
     @Inject(method = "renderHand", at = @At(value = "INVOKE_ASSIGN", target = "Lnet/minecraft/client/renderer/RenderType;entityTranslucent(Lnet/minecraft/resources/ResourceLocation;)Lnet/minecraft/client/renderer/RenderType;"), cancellable = true)
     private void renderSleeve(PoseStack poseStack, MultiBufferSource buffer, int combinedLight, AbstractClientPlayer player, ModelPart rendererArm, ModelPart rendererArmwear, CallbackInfo ci) {
-        ItemStack stack = extendedcombat$getArmor(player);
+        HumanoidArm arm = player.getMainArm();
+        ItemStack stack = extendedcombat$getArmor(player, arm);
         IClientItemExtensions extensions = IClientItemExtensions.of(stack);
         int i = extensions.getDefaultDyeColor(stack);
         if (stack.is(ModItemTags.SLEEVES)) {
@@ -73,7 +75,6 @@ public abstract class PlayerRendererMixin extends LivingEntityRenderer<AbstractC
     @Unique
     private ResourceLocation extendedcombat$getTextureId(ItemStack stack) {
         ResourceLocation texturePath = BuiltInRegistries.ITEM.getKey(stack.getItem());
-        ResourceLocation truncatedPath = ResourceLocation.parse(texturePath.getPath().replace("_chestplate", ""));
 
         if (!(stack.is(ModItems.WOOL_SLEEVE))) {
             return ExtendedCombat.id("textures/models/armor/" + texturePath.getPath() + "_overlay.png");
@@ -83,13 +84,18 @@ public abstract class PlayerRendererMixin extends LivingEntityRenderer<AbstractC
     }
 
     @Unique
-    private ItemStack extendedcombat$getArmor(LivingEntity entity) {
+    private ItemStack extendedcombat$getArmor(LivingEntity entity, HumanoidArm arm) {
         if (CuriosApi.getCuriosInventory(entity).isPresent()) {
             var curiosInventory = CuriosApi.getCuriosInventory(entity).get();
             var curios = curiosInventory.getCurios();
-            ICurioStacksHandler inventory = curios.get("right_sleeve");
-            if (inventory != null) return inventory.getStacks().getStackInSlot(0);
+            ICurioStacksHandler rightSleeve = curios.get("right_sleeve");
+            ICurioStacksHandler leftSleeve = curios.get("left_sleeve");
+            if (arm == HumanoidArm.LEFT) {
+                if (leftSleeve != null) return leftSleeve.getStacks().getStackInSlot(0);
+            } else if (arm == HumanoidArm.RIGHT) {
+                if (rightSleeve != null) return rightSleeve.getStacks().getStackInSlot(0);
+            }
         }
-        return new ItemStack(ModItems.HANDLE.get());
+        return ItemStack.EMPTY;
     }
 }

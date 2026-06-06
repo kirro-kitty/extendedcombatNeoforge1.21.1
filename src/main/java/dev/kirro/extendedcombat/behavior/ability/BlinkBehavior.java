@@ -28,22 +28,6 @@ public class BlinkBehavior implements TickingAttachment, Ability {
     }
 
     @Override
-    public void readFromNbt(CompoundTag tag, HolderLookup.Provider holderLookup) {
-        canRecharge = tag.getBoolean("CanRecharge");
-        cooldown = tag.getInt("Cooldown");
-        lastCooldown = tag.getInt("LastCooldown");
-        invisible = tag.getBoolean("Invisible");
-    }
-
-    @Override
-    public void writeToNbt(CompoundTag tag, HolderLookup.Provider holderLookup) {
-        tag.putBoolean("CanRecharge", canRecharge);
-        tag.putInt("Cooldown", cooldown);
-        tag.putInt("LastCooldown", lastCooldown);
-        tag.putBoolean("Invisible", invisible);
-    }
-
-    @Override
     public EquipmentSlot slot() {
         return EquipmentSlot.CHEST;
     }

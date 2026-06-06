@@ -122,7 +122,6 @@ public class ModItemTagProvider extends ItemTagsProvider {
         ;
 
         tag(ModItemTags.FLAME_RESISTANT_ARMOR)
-                .addTag(ModItemTags.NETHER_STEEL_WEARABLES)
                 .addTag(ModItemTags.ECHO_STEEL_WEARABLES)
         ;
 
@@ -147,7 +146,6 @@ public class ModItemTagProvider extends ItemTagsProvider {
                 .add(ModItems.NETHER_STEEL_MASK.get())
                 .add(ModItems.NETHER_STEEL_HUNTER_LEGGINGS.get())
                 .add(ModItems.NETHER_STEEL_HUNTER_BOOTS.get())
-                .add(ModItems.ECHO_REINFORCED_ELYTRA.get())
         ;
 
         tag(ModItemTags.NETHER_STEEL_ITEMS)
@@ -183,6 +181,11 @@ public class ModItemTagProvider extends ItemTagsProvider {
         tag(ModItemTags.WAVEDASH_ENCHANTABLE)
                 .addTag(ItemTags.CHEST_ARMOR_ENCHANTABLE)
                 .addTag(ModItemTags.CLOAK)
+        ;
+
+        tag(ModItemTags.WARDEN_SIGHT_ENCHANTABLE)
+                .add(ModItems.ECHO_STEEL_HELMET.get())
+                .add(ModItems.ECHO_STEEL_MASK.get())
         ;
 
         tag(ItemTags.PIGLIN_LOVED)

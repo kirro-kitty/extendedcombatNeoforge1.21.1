@@ -16,7 +16,7 @@ import java.util.concurrent.CompletableFuture;
 
 public class ModEnchantmentTagProvider extends EnchantmentTagsProvider {
     public ModEnchantmentTagProvider(PackOutput output, CompletableFuture<HolderLookup.Provider> lookupProvider, @Nullable ExistingFileHelper existingFileHelper) {
-        super(output, lookupProvider, ExtendedCombat.MOD_ID, null);
+        super(output, lookupProvider, ExtendedCombat.MOD_ID, existingFileHelper);
     }
 
     @Override
@@ -32,6 +32,7 @@ public class ModEnchantmentTagProvider extends EnchantmentTagsProvider {
                 .addOptional(ModEnchantments.AIR_JUMP.location())
                 .addOptional(ModEnchantments.BLINK.location())
                 .addOptional(ModEnchantments.WAVEDASH.location())
+                .addOptional(ModEnchantments.WARDEN_SIGHT.location())
                 .remove(Enchantments.UNBREAKING)
                 .remove(Enchantments.BANE_OF_ARTHROPODS)
                 .remove(Enchantments.SMITE)
@@ -52,6 +53,21 @@ public class ModEnchantmentTagProvider extends EnchantmentTagsProvider {
                 .addOptional(ModEnchantments.AIR_JUMP.location())
                 .addOptional(ModEnchantments.BLINK.location())
                 .addOptional(ModEnchantments.WAVEDASH.location())
+                .addOptional(ModEnchantments.WARDEN_SIGHT.location())
+        ;
+
+        tag(EnchantmentTags.ON_RANDOM_LOOT)
+                .addOptional(ModEnchantments.OBSCURITY.location())
+                .addOptional(ModEnchantments.STEALTH.location())
+                .addOptional(ModEnchantments.CONCUSSION.location())
+                .addOptional(ModEnchantments.FLUID_WALKER.location())
+                .addOptional(ModEnchantments.SWIFTNESS.location())
+                .addOptional(ModEnchantments.WATERGEL.location())
+                .addOptional(ModEnchantments.DASH.location())
+                .addOptional(ModEnchantments.AIR_JUMP.location())
+                .addOptional(ModEnchantments.BLINK.location())
+                .addOptional(ModEnchantments.WAVEDASH.location())
+                .addOptional(ModEnchantments.WARDEN_SIGHT.location())
         ;
     }
 }

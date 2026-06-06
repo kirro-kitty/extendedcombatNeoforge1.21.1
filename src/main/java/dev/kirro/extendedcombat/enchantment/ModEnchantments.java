@@ -27,6 +27,7 @@ public interface ModEnchantments {
     ResourceKey<Enchantment> AIR_JUMP = create("air_jump");
     ResourceKey<Enchantment> BLINK = create("blink");
     ResourceKey<Enchantment> WAVEDASH = create("wavedash");
+    ResourceKey<Enchantment> WARDEN_SIGHT = create("warden_sight");
 
     private static ResourceKey<Enchantment> create(String id) {
         return ResourceKey.create(Registries.ENCHANTMENT, ExtendedCombat.id(id));
@@ -153,6 +154,17 @@ public interface ModEnchantments {
                 EquipmentSlotGroup.CHEST,
                 ModEnchantmentEffects.WAVEDASH.get(),
                 new WavedashEnchantmentEffect(
+                        new AddValue(LevelBasedValue.constant(1))
+                )));
+
+        registerable.register(WARDEN_SIGHT, createCustom(WARDEN_SIGHT.location(),
+                items.getOrThrow(ModItemTags.WARDEN_SIGHT_ENCHANTABLE),
+                1,
+                Enchantment.dynamicCost(5, 5),
+                Enchantment.dynamicCost(10, 5),
+                EquipmentSlotGroup.HEAD,
+                ModEnchantmentEffects.WARDEN_SIGHT.get(),
+                new WardenSightEnchantmentEffect(
                         new AddValue(LevelBasedValue.constant(1))
                 )));
     }

@@ -20,9 +20,7 @@
     "item.CowMixin",
     "item.ItemStackMixin",
     "item.PiglinAiMixin",
-    "item.RecipeMixin",
-    "server.EntityTrackerAccessor",
-    "server.ServerChunkLoadingManagerAccessor"
+    "item.RecipeMixin"
   ],
   "client": [
     "ability.blink.HumanoidArmorLayerMixin",
@@ -30,6 +28,7 @@
     "client.ArmPoseMixin",
     "client.CapeLayerMixin",
     "client.ElytraLayerMixin",
+    "client.EntityMixin",
     "client.HideOffhandItemMixin",
     "client.PlayerRendererMixin",
     "client.ScreenEffectRendererMixin",
