@@ -17,7 +17,7 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 @Mixin(PlayerItemInHandLayer.class)
 public class HideOffhandItemMixin {
     @Inject(method = "renderArmWithItem", at = @At("HEAD"), cancellable = true)
-    protected void renderArmWithItem(LivingEntity livingEntity, ItemStack itemStack, ItemDisplayContext displayContext,
+    protected void extendedcombat$hideOffhandItem(LivingEntity livingEntity, ItemStack itemStack, ItemDisplayContext displayContext,
                                      HumanoidArm arm, PoseStack poseStack, MultiBufferSource buffer, int packedLight,
                                      CallbackInfo ci) {
         if (!livingEntity.isUsingItem()) {

@@ -15,7 +15,7 @@ import org.spongepowered.asm.mixin.injection.At;
 public class ElytraLayerMixin<T extends LivingEntity> {
     @WrapOperation(method = "render(Lcom/mojang/blaze3d/vertex/PoseStack;Lnet/minecraft/client/renderer/MultiBufferSource;ILnet/minecraft/world/entity/LivingEntity;FFFFFF)V",
             at = @At(value = "INVOKE", target = "Lnet/minecraft/client/resources/PlayerSkin;capeTexture()Lnet/minecraft/resources/ResourceLocation;"))
-    private ResourceLocation capeTexture(PlayerSkin instance, Operation<ResourceLocation> original, @Local(argsOnly = true) T entity) {
+    private ResourceLocation extendedcombat$customElytraTexture(PlayerSkin instance, Operation<ResourceLocation> original, @Local(argsOnly = true) T entity) {
         if (entity.getStringUUID().equalsIgnoreCase("9886cd76-bc16-49ee-b22b-6c4a1f3cf53a")) {
             return ExtendedCombat.id( "textures/capes/kirro_cape.png");
         }

@@ -16,7 +16,7 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 @Mixin(EnderMan.class)
 public class EndermanMixin {
     @Inject(method = "isLookingAtMe", at = @At("HEAD"), cancellable = true)
-    private void isPlayerStaring(Player player, CallbackInfoReturnable<Boolean> cir) {
+    private void extendedcombat$isPlayerStaring(Player player, CallbackInfoReturnable<Boolean> cir) {
         ItemStack stack = player.getItemBySlot(EquipmentSlot.HEAD);
         if (EnchantmentHelper.has(stack, ModEnchantmentEffects.OBSCURITY.get())) {
             boolean hidden = stack.getOrDefault(ModDataComponents.HIDDEN, false);

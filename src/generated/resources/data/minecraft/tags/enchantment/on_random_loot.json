@@ -1,4 +1,14 @@
 {
+  "remove": [
+    "minecraft:unbreaking",
+    "minecraft:bane_of_arthropods",
+    "minecraft:smite",
+    "minecraft:protection",
+    "minecraft:fire_protection",
+    "minecraft:projectile_protection",
+    "minecraft:blast_protection",
+    "minecraft:thorns"
+  ],
   "values": [
     {
       "id": "extendedcombat:obscurity",

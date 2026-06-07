@@ -188,7 +188,7 @@ public class ModItemTagProvider extends ItemTagsProvider {
                 .add(ModItems.ECHO_STEEL_MASK.get())
         ;
 
-        tag(ItemTags.PIGLIN_LOVED)
+        tag(ModItemTags.PACIFIES_PIGLINS)
                 .addTag(ModItemTags.NETHER_STEEL_WEARABLES)
                 .addTag(ModItemTags.NETHER_STEEL_ITEMS)
                 .addTag(ModItemTags.ECHO_STEEL_ITEMS)

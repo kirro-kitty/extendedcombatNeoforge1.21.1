@@ -15,24 +15,24 @@ import org.spongepowered.asm.mixin.injection.At;
 @Mixin(Monster.class)
 public class MonsterMixin {
     @ModifyReturnValue(method = "isDarkEnoughToSpawn", at = @At("RETURN"))
-    private static boolean isSpawnDark(boolean original, @Local(argsOnly = true) ServerLevelAccessor level, @Local(argsOnly = true) BlockPos pos) {
+    private static boolean extendedcombat$isSpawnDark(boolean original, @Local(argsOnly = true) ServerLevelAccessor level, @Local(argsOnly = true) BlockPos pos) {
         return WardingStoneBlock.isNearby(level, pos, original);
     }
 
     @ModifyReturnValue(method = "checkMonsterSpawnRules", at = @At("RETURN"))
-    private static boolean canSpawnInDark(boolean original, @Local(argsOnly = true) ServerLevelAccessor level, @Local(argsOnly = true) BlockPos pos) {
+    private static boolean extendedcombat$canSpawnInDark(boolean original, @Local(argsOnly = true) ServerLevelAccessor level, @Local(argsOnly = true) BlockPos pos) {
         return WardingStoneBlock.isNearby(level, pos, original);
     }
 
     @ModifyReturnValue(method = "checkAnyLightMonsterSpawnRules", at = @At("RETURN"))
-    private static boolean canSpawnIgnoreLightLevel(boolean original, @Local(argsOnly = true) LevelAccessor level, @Local(argsOnly = true) BlockPos pos) {
+    private static boolean extendedcombat$canSpawnIgnoreLightLevel(boolean original, @Local(argsOnly = true) LevelAccessor level, @Local(argsOnly = true) BlockPos pos) {
         return WardingStoneBlock.isNearby(level, pos, original);
     }
 
     @Mixin(Slime.class)
     public static class SlimeMixin {
         @ModifyReturnValue(method = "checkSlimeSpawnRules", at = @At("RETURN"))
-        private static boolean canSpawn(boolean original, @Local(argsOnly = true) LevelAccessor level, @Local(argsOnly = true) BlockPos pos) {
+        private static boolean extendedcombat$canSpawn(boolean original, @Local(argsOnly = true) LevelAccessor level, @Local(argsOnly = true) BlockPos pos) {
             return WardingStoneBlock.isNearby(level, pos, original);
         }
     }
@@ -40,7 +40,7 @@ public class MonsterMixin {
     @Mixin(Bat.class)
     public static class BatMixin {
         @ModifyReturnValue(method = "checkBatSpawnRules", at = @At("RETURN"))
-        private static boolean canSpawn(boolean original, @Local(argsOnly = true) LevelAccessor level, @Local(argsOnly = true) BlockPos pos) {
+        private static boolean extendedcombat$canSpawn(boolean original, @Local(argsOnly = true) LevelAccessor level, @Local(argsOnly = true) BlockPos pos) {
             return WardingStoneBlock.isNearby(level, pos, original);
         }
     }

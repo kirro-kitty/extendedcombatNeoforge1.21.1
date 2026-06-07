@@ -21,7 +21,7 @@ public abstract class TridentItemMixin {
     public abstract int getUseDuration(ItemStack stack, LivingEntity entity);
 
     @Inject(method = "releaseUsing", at = @At("RETURN"))
-    private void releaseUsing(ItemStack stack, Level level, LivingEntity entityLiving, int timeLeft, CallbackInfo ci) {
+    private void extendedcombat$releaseUsing(ItemStack stack, Level level, LivingEntity entityLiving, int timeLeft, CallbackInfo ci) {
         if (entityLiving instanceof Player player) {
             int i = this.getUseDuration(stack, entityLiving) - timeLeft;
             if (i >= 10) {
@@ -35,7 +35,7 @@ public abstract class TridentItemMixin {
     }
 
     @ModifyExpressionValue(method = "releaseUsing", at = @At(value = "INVOKE", target = "Lnet/minecraft/world/entity/player/Player;isInWaterOrRain()Z"))
-    private boolean w(boolean original, ItemStack stack, Level level, LivingEntity entityLiving, int timeLeft) {
+    private boolean extendedcombat$watergel(boolean original, ItemStack stack, Level level, LivingEntity entityLiving, int timeLeft) {
         if (entityLiving instanceof Player player) {
             WatergelBehavior watergel = player.getData(ModDataAttachments.WATERGEL);
             return original || watergel.canUse();
@@ -44,7 +44,7 @@ public abstract class TridentItemMixin {
     }
 
     @ModifyExpressionValue(method = "use", at = @At(value = "INVOKE", target = "Lnet/minecraft/world/entity/player/Player;isInWaterOrRain()Z"))
-    private boolean watergelled(boolean original, Level level, Player player) {
+    private boolean extendedcombat$watergelled(boolean original, Level level, Player player) {
         WatergelBehavior watergel = player.getData(ModDataAttachments.WATERGEL);
         return original || watergel.canUse();
     }

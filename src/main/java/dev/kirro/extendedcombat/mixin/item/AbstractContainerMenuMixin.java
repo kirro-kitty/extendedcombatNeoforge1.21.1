@@ -28,7 +28,7 @@ public class AbstractContainerMenuMixin {
     public NonNullList<Slot> slots;
 
     @Inject(method = "clicked", at = @At("HEAD"), cancellable = true)
-    private void onClick(int slotId, int button, ClickType clickType, Player player, CallbackInfo ci) {
+    private void extendedcombat$onClick(int slotId, int button, ClickType clickType, Player player, CallbackInfo ci) {
         if (button == GLFW.GLFW_MOUSE_BUTTON_RIGHT && slotId >= 0 && slotId < this.slots.size()) {
             Slot slot = this.slots.get(slotId);
             ItemStack stack = slot.getItem();

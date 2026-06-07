@@ -16,9 +16,11 @@ public class ModPoi {
 
     public static final Holder<PoiType> WARDING_STONE_POI = POI_TYPES.register(
             "warding_stone",
-            () -> new PoiType(ImmutableSet.copyOf(ModBlocks.WARDING_STONE.get().getStateDefinition().getPossibleStates()),
+            () -> new PoiType(
+                    ImmutableSet.copyOf(ModBlocks.WARDING_STONE.get().getStateDefinition().getPossibleStates()),
                     1,
-                    1));
+                    1)
+    );
 
 
     public static void register(IEventBus eventBus) {

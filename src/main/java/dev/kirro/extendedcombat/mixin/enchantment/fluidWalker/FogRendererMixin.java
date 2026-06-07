@@ -19,7 +19,7 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 @Mixin(FogRenderer.class)
 public class FogRendererMixin {
     @Inject(method = "setupFog", at = @At("HEAD"), cancellable = true)
-    private static void applyFog(Camera camera, FogRenderer.FogMode fogMode, float farPlaneDistance, boolean shouldCreateFog, float partialTick, CallbackInfo ci) {
+    private static void extendedcombat$applyFog(Camera camera, FogRenderer.FogMode fogMode, float farPlaneDistance, boolean shouldCreateFog, float partialTick, CallbackInfo ci) {
         FogType type = camera.getFluidInCamera();
         Entity entity = camera.getEntity();
         if (entity instanceof LivingEntity living) {

@@ -34,6 +34,7 @@ public interface ModItemTags {
     TagKey<Item> WARDEN_SIGHT_ENCHANTABLE = create("enchantable/warden_sight");
     TagKey<Item> SLEEVES_LEFT = create("left_sleeve", "curios");
     TagKey<Item> SLEEVES_RIGHT = create("right_sleeve", "curios");
+    TagKey<Item> PACIFIES_PIGLINS = create("pacifies_piglins");
 
     private static TagKey<Item> create(String id) {
         return TagKey.create(Registries.ITEM, ExtendedCombat.id(id));

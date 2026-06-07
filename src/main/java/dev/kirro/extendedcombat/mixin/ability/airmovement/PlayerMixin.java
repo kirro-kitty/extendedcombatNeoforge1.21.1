@@ -25,7 +25,7 @@ public abstract class PlayerMixin extends LivingEntity {
     }
 
     @ModifyReturnValue(method = "getFlyingSpeed", at = @At("RETURN"))
-    private float getAirMovementSpeed(float original) {
+    private float extendedcombat$getAirMovementSpeed(float original) {
         AirMovementBehavior airMovementBehavior = this.getData(ModDataAttachments.AIR_MOVEMENT);
         if (!this.abilities.flying) {
             return airMovementBehavior.movementMultiplier(original);

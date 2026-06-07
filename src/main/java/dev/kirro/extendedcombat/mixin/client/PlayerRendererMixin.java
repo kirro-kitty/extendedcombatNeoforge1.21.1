@@ -59,7 +59,7 @@ public abstract class PlayerRendererMixin extends LivingEntityRenderer<AbstractC
     }
 
     @Inject(method = "renderHand", at = @At(value = "INVOKE_ASSIGN", target = "Lnet/minecraft/client/renderer/RenderType;entityTranslucent(Lnet/minecraft/resources/ResourceLocation;)Lnet/minecraft/client/renderer/RenderType;"), cancellable = true)
-    private void renderSleeve(PoseStack poseStack, MultiBufferSource buffer, int combinedLight, AbstractClientPlayer player, ModelPart rendererArm, ModelPart rendererArmwear, CallbackInfo ci) {
+    private void extendedcombat$renderSleeve(PoseStack poseStack, MultiBufferSource buffer, int combinedLight, AbstractClientPlayer player, ModelPart rendererArm, ModelPart rendererArmwear, CallbackInfo ci) {
         HumanoidArm arm = player.getMainArm();
         ItemStack stack = extendedcombat$getArmor(player, arm);
         IClientItemExtensions extensions = IClientItemExtensions.of(stack);

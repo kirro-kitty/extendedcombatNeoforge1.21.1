@@ -11,7 +11,7 @@ import javax.print.DocFlavor;
 @Mixin(ArmorStand.class)
 public class ArmorStandMixin {
     @Inject(method = "isShowArms", at = @At("RETURN"), cancellable = true)
-    public void showArms(CallbackInfoReturnable<Boolean> cir) {
+    public void extendedcombat$showArms(CallbackInfoReturnable<Boolean> cir) {
         cir.setReturnValue(true);
     }
 }

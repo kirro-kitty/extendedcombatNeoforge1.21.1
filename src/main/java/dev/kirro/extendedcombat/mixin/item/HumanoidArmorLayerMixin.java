@@ -50,7 +50,7 @@ public abstract class HumanoidArmorLayerMixin<T extends LivingEntity, M extends 
 
     @Inject(method = "renderArmorPiece(Lcom/mojang/blaze3d/vertex/PoseStack;Lnet/minecraft/client/renderer/MultiBufferSource;Lnet/minecraft/world/entity/LivingEntity;Lnet/minecraft/world/entity/EquipmentSlot;ILnet/minecraft/client/model/HumanoidModel;FFFFFF)V",
     at = @At("HEAD"), cancellable = true)
-    private void getTexture(PoseStack poseStack, MultiBufferSource bufferSource, T livingEntity, EquipmentSlot slot, int packedLight, A p_model, float limbSwing, float limbSwingAmount, float partialTick, float ageInTicks, float netHeadYaw, float headPitch, CallbackInfo ci) {
+    private void extendedcombat$getTexture(PoseStack poseStack, MultiBufferSource bufferSource, T livingEntity, EquipmentSlot slot, int packedLight, A p_model, float limbSwing, float limbSwingAmount, float partialTick, float ageInTicks, float netHeadYaw, float headPitch, CallbackInfo ci) {
         ItemStack itemstack = livingEntity.getItemBySlot(slot);
         if (itemstack.getItem() instanceof WoolArmorItem armorItem) {
             ci.cancel();

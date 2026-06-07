@@ -13,7 +13,7 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 @Mixin(Entity.class)
 public class EntityMixin {
     @Inject(method = "canSpawnSprintParticle", at = @At("HEAD"),cancellable = true)
-    public void shouldSpawnSprintingParticles(CallbackInfoReturnable<Boolean> cir) {
+    public void extendedcombat$shouldSpawnSprintingParticles(CallbackInfoReturnable<Boolean> cir) {
         if ((Object) this instanceof Player player) {
             if (EnchantmentHelper.has(player.getItemBySlot(EquipmentSlot.CHEST), ModEnchantmentEffects.STEALTH.get())) {
                 cir.setReturnValue(false);

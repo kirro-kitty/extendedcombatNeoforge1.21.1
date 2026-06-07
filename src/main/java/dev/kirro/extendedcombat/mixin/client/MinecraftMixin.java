@@ -16,24 +16,7 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 import javax.annotation.Nullable;
 
 @Mixin(Minecraft.class)
-public class EntityMixin {
-    /*@Inject(method = "isCurrentlyGlowing", at = @At("HEAD"), cancellable = true)
-    private void extendedcombat$wardenSight(CallbackInfoReturnable<Boolean> cir) {
-        Minecraft minecraft = Minecraft.getInstance();
-        Player player = minecraft.player;
-        if (player == null) {
-            return;
-        }
-        WardenSightBehavior wardenSight = player.getExistingDataOrNull(ModDataAttachments.WARDEN_SIGHT);
-        if (wardenSight != null) {
-            if ((Object) this instanceof LivingEntity livingEntity) {
-                cir.setReturnValue(wardenSight.getVisibility(livingEntity, player));
-            } else if (player != wardenSight.getPlayer()) {
-                cir.setReturnValue(wardenSight.getVisibility((LivingEntity) (Object) this, player));
-            }
-        }
-    }*/
-
+public class MinecraftMixin {
     @Shadow
     @Nullable
     public LocalPlayer player;

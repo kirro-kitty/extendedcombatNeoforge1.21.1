@@ -4,20 +4,20 @@ import dev.kirro.extendedcombat.item.custom.MilkBottleItem;
 import net.minecraft.client.Minecraft;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.core.NonNullList;
-import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.crafting.*;
+import org.jetbrains.annotations.NotNull;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
 
 @Mixin(ShapelessRecipe.class)
 public abstract class RecipeMixin<T extends RecipeInput> implements CraftingRecipe {
     @Shadow
-    public abstract ItemStack getResultItem(HolderLookup.Provider registries);
+    public abstract @NotNull ItemStack getResultItem(HolderLookup.@NotNull Provider registries);
 
     @Override
-    public NonNullList<ItemStack> getRemainingItems(CraftingInput input) {
+    public @NotNull NonNullList<ItemStack> getRemainingItems(@NotNull CraftingInput input) {
         Minecraft minecraft = Minecraft.getInstance();
         if (minecraft.level != null) {
             if (this.getResultItem(minecraft.level.registryAccess()).getItem() instanceof MilkBottleItem) {

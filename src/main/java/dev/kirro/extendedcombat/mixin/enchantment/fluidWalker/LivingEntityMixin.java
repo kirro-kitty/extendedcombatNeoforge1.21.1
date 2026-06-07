@@ -33,14 +33,14 @@ public abstract class LivingEntityMixin extends Entity {
     }
 
     @Inject(method = "canStandOnFluid", at = @At("HEAD"), cancellable = true)
-    private void canFluidWalk(FluidState fluidState, CallbackInfoReturnable<Boolean> cir) {
+    private void extendedcombat$canFluidWalk(FluidState fluidState, CallbackInfoReturnable<Boolean> cir) {
         if (ExtendedCombatUtil.canWalkOn((LivingEntity) (Object) this)) {
             cir.setReturnValue(true);
         }
     }
 
     @ModifyArg(method = "handleRelativeFrictionAndCalculateMovement", at = @At(value = "INVOKE", target = "Lnet/minecraft/world/entity/LivingEntity;moveRelative(FLnet/minecraft/world/phys/Vec3;)V"))
-    private float increaseFluidMovementSpeed(float original) {
+    private float extendedcombat$increaseFluidMovementSpeed(float original) {
         ItemStack stack = this.getItemBySlot(EquipmentSlot.FEET);
         boolean submergedWithEnchant = ExtendedCombatUtil.isTouchingFluid(this) && EnchantmentHelper.has(stack, ModEnchantmentEffects.FLUID_WALKER.get());
         float value = submergedWithEnchant ? FluidWalkerEnchantmentEffect.getValue((LivingEntity) (Object) this) : 1;
@@ -48,12 +48,12 @@ public abstract class LivingEntityMixin extends Entity {
     }
 
     @ModifyExpressionValue(method = "travel", at = @At(value = "INVOKE", target = "Lnet/minecraft/world/entity/LivingEntity;canStandOnFluid(Lnet/minecraft/world/level/material/FluidState;)Z"))
-    protected boolean fluidWalking(boolean original) {
+    protected boolean extendedcombat$fluidWalking(boolean original) {
         return original || ExtendedCombatUtil.canWalkOn((LivingEntity) (Object) this);
     }
 
     @ModifyArg(method = "travel", at = @At(value = "INVOKE", target = "Lnet/minecraft/world/entity/LivingEntity;moveRelative(FLnet/minecraft/world/phys/Vec3;)V"))
-    private float increaseLavaMovementSpeed(float original) {
+    private float extendedcombat$increaseLavaMovementSpeed(float original) {
         ItemStack stack = this.getItemBySlot(EquipmentSlot.FEET);
         boolean submergedWithEnchant = ExtendedCombatUtil.isTouchingFluidOfType(this, FluidTags.LAVA) && EnchantmentHelper.has(stack, ModEnchantmentEffects.FLUID_WALKER.get());
         float value = submergedWithEnchant ? FluidWalkerEnchantmentEffect.getValue((LivingEntity) (Object) this) * 2 : 1;
@@ -61,11 +61,13 @@ public abstract class LivingEntityMixin extends Entity {
     }
 
     @ModifyReturnValue(method = "calculateFallDamage", at = @At(value = "RETURN"))
-    private int handleFallDamage(int original) {
+    private int extendedcombat$handleFallDamage(int original) {
         if ((Object) this instanceof Player player) {
             ItemStack stack = player.getItemBySlot(EquipmentSlot.FEET);
             if (stack.is(ModItemTags.NETHER_STEEL_WEARABLES) || stack.is(ModItemTags.ECHO_STEEL_WEARABLES) || stack.is(ModItemTags.HUNTER_BOOTS)) {
-                return (int) (original * 0.7);
+                if (stack.isEnchanted()) {
+                    return (int) (original * 0.7);
+                }
             }
         }
         return original;

@@ -13,7 +13,7 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 @Mixin(ScreenEffectRenderer.class)
 public class ScreenEffectRendererMixin {
     @Inject(method = "renderFire", at = @At("HEAD"), cancellable = true)
-    private static void isOnFire(Minecraft minecraft, PoseStack poseStack, CallbackInfo ci) {
+    private static void extendedcombat$hideFire(Minecraft minecraft, PoseStack poseStack, CallbackInfo ci) {
         if (minecraft.player instanceof LivingEntity entity) {
             if (ExtendedCombatUtil.isFlameResistant(entity)) {
                 ci.cancel();

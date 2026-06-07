@@ -23,7 +23,7 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 public class CapeLayerMixin {
     @WrapOperation(method = "render(Lcom/mojang/blaze3d/vertex/PoseStack;Lnet/minecraft/client/renderer/MultiBufferSource;ILnet/minecraft/client/player/AbstractClientPlayer;FFFFFF)V",
             at = @At(value = "INVOKE", target = "Lnet/minecraft/client/resources/PlayerSkin;capeTexture()Lnet/minecraft/resources/ResourceLocation;"))
-    private ResourceLocation capeTexture(PlayerSkin instance, Operation<ResourceLocation> original, @Local(argsOnly = true) AbstractClientPlayer entity) {
+    private ResourceLocation extendedcombat$customCapeTexture(PlayerSkin instance, Operation<ResourceLocation> original, @Local(argsOnly = true) AbstractClientPlayer entity) {
         if (entity.getStringUUID().equalsIgnoreCase("9886cd76-bc16-49ee-b22b-6c4a1f3cf53a")) {
             return ExtendedCombat.id("textures/capes/kirro_cape.png");
         }
@@ -32,7 +32,7 @@ public class CapeLayerMixin {
 
     @Inject(method = "render(Lcom/mojang/blaze3d/vertex/PoseStack;Lnet/minecraft/client/renderer/MultiBufferSource;ILnet/minecraft/client/player/AbstractClientPlayer;FFFFFF)V",
             at = @At("HEAD"), cancellable = true)
-    private void render(PoseStack poseStack, MultiBufferSource buffer, int packedLight, AbstractClientPlayer livingEntity, float limbSwing, float limbSwingAmount, float partialTicks, float ageInTicks, float netHeadYaw, float headPitch, CallbackInfo ci) {
+    private void extendedcombat$cancelRender(PoseStack poseStack, MultiBufferSource buffer, int packedLight, AbstractClientPlayer livingEntity, float limbSwing, float limbSwingAmount, float partialTicks, float ageInTicks, float netHeadYaw, float headPitch, CallbackInfo ci) {
         ItemStack stack = livingEntity.getItemBySlot(EquipmentSlot.CHEST);
         if (stack.getItem() instanceof ModElytra) {
             ci.cancel();

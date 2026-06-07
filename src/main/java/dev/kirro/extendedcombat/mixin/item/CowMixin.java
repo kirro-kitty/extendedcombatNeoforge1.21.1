@@ -17,7 +17,7 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 @Mixin(Cow.class)
 public class CowMixin {
     @Inject(method = "mobInteract", at = @At("HEAD"), cancellable = true)
-    private void fillBottle(Player player, InteractionHand hand, CallbackInfoReturnable<InteractionResult> cir) {
+    private void extendedcombat$fillBottle(Player player, InteractionHand hand, CallbackInfoReturnable<InteractionResult> cir) {
         ItemStack stack = player.getItemInHand(hand);
         if (stack.is(Items.GLASS_BOTTLE) && !((Cow)(Object) this).isBaby()) {
             player.playSound(SoundEvents.COW_MILK, 1.0f, 1.0f);
