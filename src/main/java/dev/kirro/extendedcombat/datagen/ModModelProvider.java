@@ -49,8 +49,18 @@ public class ModModelProvider extends ItemModelProvider {
         basicItem(ModItems.NETHER_STEEL_UPGRADE.get());
         basicItem(ModItems.ECHO_STEEL_UPGRADE.get());
         basicItem(ModItems.ECHO_REINFORCED_ELYTRA.get());
+
+        handheldItem(ModItems.NETHER_STEEL_SWORD.get());
+        handheldItem(ModItems.NETHER_STEEL_SHOVEL.get());
         handheldItem(ModItems.NETHER_STEEL_PICKAXE.get());
+        handheldItem(ModItems.NETHER_STEEL_AXE.get());
+        handheldItem(ModItems.NETHER_STEEL_HOE.get());
+
+        handheldItem(ModItems.ECHO_STEEL_SWORD.get());
+        handheldItem(ModItems.ECHO_STEEL_SHOVEL.get());
         handheldItem(ModItems.ECHO_STEEL_PICKAXE.get());
+        handheldItem(ModItems.ECHO_STEEL_AXE.get());
+        handheldItem(ModItems.ECHO_STEEL_HOE.get());
         handheldItem(ModItems.WOODEN_HAMMER.get());
         handheldItem(ModItems.STONE_HAMMER.get());
         handheldItem(ModItems.IRON_HAMMER.get());
@@ -66,7 +76,6 @@ public class ModModelProvider extends ItemModelProvider {
         basicItem(ModItems.MILK_BOTTLE.get());
         basicItem(ModItems.SWEET_BERRY_MILK_BOTTLE.get());
         basicItem(ModItems.CHOCOLATE_MILK_BOTTLE.get());
-        //basicItem(ModItems.REPAIR_CHARM.get());
 
         basicItem(ModItems.CHAINMAIL_SLEEVE.get());
         basicItem(ModItems.LEATHER_SLEEVE.get());

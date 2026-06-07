@@ -7,6 +7,8 @@
     "extendedcombat:diamond_greatsword",
     "extendedcombat:netherite_greatsword",
     "extendedcombat:nether_steel_greatsword",
-    "extendedcombat:echo_steel_greatsword"
+    "extendedcombat:echo_steel_greatsword",
+    "extendedcombat:nether_steel_sword",
+    "extendedcombat:echo_steel_sword"
   ]
 }

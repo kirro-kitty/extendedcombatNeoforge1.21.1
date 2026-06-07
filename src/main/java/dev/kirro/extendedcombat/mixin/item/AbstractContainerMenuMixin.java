@@ -1,6 +1,7 @@
 package dev.kirro.extendedcombat.mixin.item;
 
 import dev.kirro.extendedcombat.data.ModDataComponents;
+import dev.kirro.extendedcombat.item.ModItems;
 import dev.kirro.extendedcombat.item.custom.HunterMaskItem;
 import dev.kirro.extendedcombat.item.custom.WoolArmorItem;
 import dev.kirro.extendedcombat.tags.ModItemTags;
@@ -40,6 +41,10 @@ public class AbstractContainerMenuMixin {
                     HunterMaskItem.cycleData(stack, !stack.getOrDefault(ModDataComponents.HIDDEN, false));
                     player.playSound(SoundEvents.ARMOR_EQUIP_LEATHER.value(), 1.0f, 1.0f);
                 }
+                ci.cancel();
+            } else if(clickType == ClickType.QUICK_MOVE && stack.is(ModItems.ECHO_STEEL_HELMET)) {
+                stack.set(ModDataComponents.HIDDEN, !stack.getOrDefault(ModDataComponents.HIDDEN, false));
+                player.playSound(SoundEvents.ARMOR_EQUIP_WOLF.value(), 1.0f, 1.0f);
                 ci.cancel();
             }
         }

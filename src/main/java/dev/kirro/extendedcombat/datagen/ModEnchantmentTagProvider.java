@@ -36,8 +36,10 @@ public class ModEnchantmentTagProvider extends EnchantmentTagsProvider {
                 .remove(Enchantments.UNBREAKING)
                 .remove(Enchantments.BANE_OF_ARTHROPODS)
                 .remove(Enchantments.SMITE)
+                .remove(Enchantments.PROTECTION)
                 .remove(Enchantments.FIRE_PROTECTION)
                 .remove(Enchantments.PROJECTILE_PROTECTION)
+                .remove(Enchantments.BLAST_PROTECTION)
                 .remove(Enchantments.THORNS)
                 .replace(false)
         ;
@@ -57,6 +59,14 @@ public class ModEnchantmentTagProvider extends EnchantmentTagsProvider {
         ;
 
         tag(EnchantmentTags.ON_RANDOM_LOOT)
+                .remove(Enchantments.UNBREAKING)
+                .remove(Enchantments.BANE_OF_ARTHROPODS)
+                .remove(Enchantments.SMITE)
+                .remove(Enchantments.PROTECTION)
+                .remove(Enchantments.FIRE_PROTECTION)
+                .remove(Enchantments.PROJECTILE_PROTECTION)
+                .remove(Enchantments.BLAST_PROTECTION)
+                .remove(Enchantments.THORNS)
                 .addOptional(ModEnchantments.OBSCURITY.location())
                 .addOptional(ModEnchantments.STEALTH.location())
                 .addOptional(ModEnchantments.CONCUSSION.location())
@@ -68,6 +78,39 @@ public class ModEnchantmentTagProvider extends EnchantmentTagsProvider {
                 .addOptional(ModEnchantments.BLINK.location())
                 .addOptional(ModEnchantments.WAVEDASH.location())
                 .addOptional(ModEnchantments.WARDEN_SIGHT.location())
+        ;
+
+        tag(EnchantmentTags.ON_MOB_SPAWN_EQUIPMENT)
+                .remove(Enchantments.UNBREAKING)
+                .remove(Enchantments.BANE_OF_ARTHROPODS)
+                .remove(Enchantments.SMITE)
+                .remove(Enchantments.PROTECTION)
+                .remove(Enchantments.FIRE_PROTECTION)
+                .remove(Enchantments.PROJECTILE_PROTECTION)
+                .remove(Enchantments.BLAST_PROTECTION)
+                .remove(Enchantments.THORNS)
+        ;
+
+        tag(EnchantmentTags.ON_TRADED_EQUIPMENT)
+                .remove(Enchantments.UNBREAKING)
+                .remove(Enchantments.BANE_OF_ARTHROPODS)
+                .remove(Enchantments.SMITE)
+                .remove(Enchantments.PROTECTION)
+                .remove(Enchantments.FIRE_PROTECTION)
+                .remove(Enchantments.PROJECTILE_PROTECTION)
+                .remove(Enchantments.BLAST_PROTECTION)
+                .remove(Enchantments.THORNS)
+        ;
+
+        tag(EnchantmentTags.TRADEABLE)
+                .remove(Enchantments.UNBREAKING)
+                .remove(Enchantments.BANE_OF_ARTHROPODS)
+                .remove(Enchantments.SMITE)
+                .remove(Enchantments.PROTECTION)
+                .remove(Enchantments.FIRE_PROTECTION)
+                .remove(Enchantments.PROJECTILE_PROTECTION)
+                .remove(Enchantments.BLAST_PROTECTION)
+                .remove(Enchantments.THORNS)
         ;
     }
 }

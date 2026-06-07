@@ -45,7 +45,7 @@ public class DashBehavior implements TickingAttachment, Ability {
     }
 
     private float strength() {
-        return this.getValue(level(), 0.8f, 0.3f);
+        return this.getValue(level(), 0.6f, 0.3f);
     }
 
     @Override

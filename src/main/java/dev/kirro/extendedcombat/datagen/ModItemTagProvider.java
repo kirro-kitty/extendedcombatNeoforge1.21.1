@@ -258,9 +258,13 @@ public class ModItemTagProvider extends ItemTagsProvider {
                 .add(ModItems.NETHERITE_HALBERD.get())
                 .add(ModItems.NETHER_STEEL_HALBERD.get())
                 .add(ModItems.ECHO_STEEL_HALBERD.get())
+                .add(ModItems.NETHER_STEEL_AXE.get())
+                .add(ModItems.ECHO_STEEL_AXE.get())
                 .replace(false)
         ;
         tag(ItemTags.SHOVELS)
+                .add(ModItems.NETHER_STEEL_SHOVEL.get())
+                .add(ModItems.ECHO_STEEL_SHOVEL.get())
                 .replace(false)
         ;
         tag(ItemTags.SWORDS)
@@ -272,6 +276,8 @@ public class ModItemTagProvider extends ItemTagsProvider {
                 .add(ModItems.NETHERITE_GREATSWORD.get())
                 .add(ModItems.NETHER_STEEL_GREATSWORD.get())
                 .add(ModItems.ECHO_STEEL_GREATSWORD.get())
+                .add(ModItems.NETHER_STEEL_SWORD.get())
+                .add(ModItems.ECHO_STEEL_SWORD.get())
                 .replace(false)
         ;
 
@@ -280,6 +286,8 @@ public class ModItemTagProvider extends ItemTagsProvider {
                 .add(ModItems.ECHO_STEEL_HALBERD.get())
                 .add(ModItems.ECHO_STEEL_HAMMER.get())
                 .add(ModItems.ECHO_STEEL_PICKAXE.get())
+                .add(ModItems.NETHER_STEEL_HOE.get())
+                .add(ModItems.ECHO_STEEL_HOE.get())
                 .replace(false)
         ;
 

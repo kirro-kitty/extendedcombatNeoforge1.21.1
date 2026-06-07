@@ -26,8 +26,17 @@
   "item.extendedcombat.nether_steel_halberd": "Nether Steel Halberd",
   "item.extendedcombat.echo_steel_halberd": "Echo Steel Halberd",
 
+  "item.extendedcombat.nether_steel_sword": "Nether Steel Sword",
+  "item.extendedcombat.nether_steel_shovel": "Nether Steel Shovel",
   "item.extendedcombat.nether_steel_pickaxe": "Nether Steel Pickaxe",
+  "item.extendedcombat.nether_steel_axe": "Nether Steel Axe",
+  "item.extendedcombat.nether_steel_hoe": "Nether Steel Hoe",
+
+  "item.extendedcombat.echo_steel_sword": "Echo Steel Sword",
+  "item.extendedcombat.echo_steel_shovel": "Echo Steel Shovel",
   "item.extendedcombat.echo_steel_pickaxe": "Echo Steel Pickaxe",
+  "item.extendedcombat.echo_steel_axe": "Echo Steel Axe",
+  "item.extendedcombat.echo_steel_hoe": "Echo Steel Hoe",
 
   "item.extendedcombat.wooden_hammer": "Wooden Hammer",
   "item.extendedcombat.stone_hammer": "Stone Hammer",

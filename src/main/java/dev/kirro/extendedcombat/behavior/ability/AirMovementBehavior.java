@@ -64,7 +64,7 @@ public class AirMovementBehavior implements TickingAttachment, Ability {
         if (head.isEnchanted()
                 && chest.isEnchanted()
                 && legs.isEnchanted()
-                && feet.isEnchanted()) return 2.5f;
+                && feet.isEnchanted()) return 2.0f;
         else return 1;
     }
 

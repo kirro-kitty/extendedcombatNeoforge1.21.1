@@ -2,6 +2,7 @@ package dev.kirro.extendedcombat.mixin.enchantment.obscurity;
 
 import dev.kirro.extendedcombat.enchantment.ModEnchantmentEffects;
 import dev.kirro.extendedcombat.data.ModDataComponents;
+import dev.kirro.extendedcombat.item.ModItems;
 import net.minecraft.client.renderer.entity.LivingEntityRenderer;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.LivingEntity;
@@ -21,7 +22,9 @@ public class LivingEntityRendererMixin<T extends LivingEntity> {
             ItemStack stack = player.getItemBySlot(EquipmentSlot.HEAD);
             if (EnchantmentHelper.has(stack, ModEnchantmentEffects.OBSCURITY.get())) {
                 boolean hidden = stack.getOrDefault(ModDataComponents.HIDDEN, false);
-                if (!hidden) {
+                if (!hidden && !stack.is(ModItems.ECHO_STEEL_HELMET)) {
+                    cir.setReturnValue(false);
+                }else if (stack.is(ModItems.ECHO_STEEL_HELMET)) {
                     cir.setReturnValue(false);
                 }
             }

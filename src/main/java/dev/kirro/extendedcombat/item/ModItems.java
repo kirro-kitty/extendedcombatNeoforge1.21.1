@@ -70,12 +70,38 @@ public interface ModItems {
             () -> new GreatswordItem(ModToolTiers.ECHO_STEEL, new Item.Properties().fireResistant()
                     .attributes(GreatswordItem.createAttributes(ModToolTiers.ECHO_STEEL, 7, greatswordAttackSpeed, greatswordSweepRatio))));
 
+    DeferredItem<Item> NETHER_STEEL_SWORD = register("nether_steel_sword",
+            () -> new SwordItem(ModToolTiers.NETHER_STEEL, new Item.Properties().fireResistant()
+                    .attributes(SwordItem.createAttributes(ModToolTiers.NETHER_STEEL, 1, -2.4f))));
+    DeferredItem<Item> NETHER_STEEL_SHOVEL = register("nether_steel_shovel",
+            () -> new ShovelItem(ModToolTiers.NETHER_STEEL, new Item.Properties().fireResistant()
+                    .attributes(ShovelItem.createAttributes(ModToolTiers.NETHER_STEEL, -0.5f, -3.0f))));
     DeferredItem<Item> NETHER_STEEL_PICKAXE = register("nether_steel_pickaxe",
             () -> new PickaxeItem(ModToolTiers.NETHER_STEEL, new Item.Properties().fireResistant()
-                    .attributes(PickaxeItem.createAttributes(ModToolTiers.NETHER_STEEL, 0, -2.8f))));
+                    .attributes(PickaxeItem.createAttributes(ModToolTiers.NETHER_STEEL, -1, -2.8f))));
+    DeferredItem<Item> NETHER_STEEL_AXE = register("nether_steel_axe",
+            () -> new AxeItem(ModToolTiers.NETHER_STEEL, new Item.Properties().fireResistant()
+                    .attributes(AxeItem.createAttributes(ModToolTiers.NETHER_STEEL, 3, -3.2f))));
+    DeferredItem<Item> NETHER_STEEL_HOE = register("nether_steel_hoe",
+            () -> new HoeItem(ModToolTiers.NETHER_STEEL, new Item.Properties().fireResistant()
+                    .attributes(HoeItem.createAttributes(ModToolTiers.NETHER_STEEL, -7, -3.0f))));
+
+    DeferredItem<Item> ECHO_STEEL_SWORD = register("echo_steel_sword",
+            () -> new SwordItem(ModToolTiers.ECHO_STEEL, new Item.Properties().fireResistant()
+                    .attributes(HoeItem.createAttributes(ModToolTiers.ECHO_STEEL, 1, -2.4f))));
+    DeferredItem<Item> ECHO_STEEL_SHOVEL = register("echo_steel_shovel",
+            () -> new ShovelItem(ModToolTiers.ECHO_STEEL, new Item.Properties().fireResistant()
+                    .attributes(ShovelItem.createAttributes(ModToolTiers.ECHO_STEEL, -0.5f, -3.0f))));
     DeferredItem<Item> ECHO_STEEL_PICKAXE = register("echo_steel_pickaxe",
             () -> new PickaxeItem(ModToolTiers.ECHO_STEEL, new Item.Properties().fireResistant()
-                    .attributes(PickaxeItem.createAttributes(ModToolTiers.ECHO_STEEL, 0, -2.8f))));
+                    .attributes(PickaxeItem.createAttributes(ModToolTiers.ECHO_STEEL, -1, -2.8f))));
+    DeferredItem<Item> ECHO_STEEL_AXE = register("echo_steel_axe",
+            () -> new AxeItem(ModToolTiers.ECHO_STEEL, new Item.Properties().fireResistant()
+                    .attributes(AxeItem.createAttributes(ModToolTiers.ECHO_STEEL, 3, -3.2f))));
+    DeferredItem<Item> ECHO_STEEL_HOE = register("echo_steel_hoe",
+            () -> new HoeItem(ModToolTiers.ECHO_STEEL, new Item.Properties().fireResistant()
+                    .attributes(SwordItem.createAttributes(ModToolTiers.ECHO_STEEL, -8, -3.0f))));
+
 
     DeferredItem<Item> WOODEN_HAMMER = register("wooden_hammer",
             () -> new HammerItem(Tiers.WOOD, new Item.Properties()
@@ -97,10 +123,10 @@ public interface ModItems {
                     .attributes(DiggerItem.createAttributes(Tiers.NETHERITE, 1f, -3.2f))));
     DeferredItem<Item> NETHER_STEEL_HAMMER = register("nether_steel_hammer",
             () -> new HammerItem(ModToolTiers.NETHER_STEEL,  new Item.Properties().fireResistant()
-                    .attributes(DiggerItem.createAttributes(ModToolTiers.NETHER_STEEL, 1f, -3.2f))));
+                    .attributes(DiggerItem.createAttributes(ModToolTiers.NETHER_STEEL, -1, -3.2f))));
     DeferredItem<Item> ECHO_STEEL_HAMMER = register("echo_steel_hammer",
             () -> new HammerItem(ModToolTiers.ECHO_STEEL, new Item.Properties().fireResistant()
-                    .attributes(DiggerItem.createAttributes(ModToolTiers.ECHO_STEEL, 1f, -3.2f))));
+                    .attributes(DiggerItem.createAttributes(ModToolTiers.ECHO_STEEL, -1, -3.2f))));
 
     DeferredItem<Item> NETHER_STEEL_HELMET = register("nether_steel_helmet",
             () -> new ModArmorItem(ModArmorMaterials.NETHER_STEEL, ArmorItem.Type.HELMET, new Item.Properties().fireResistant().stacksTo(1).durability(8124)));
@@ -228,10 +254,16 @@ public interface ModItems {
             entries.insertAfter(Items.GOLDEN_HOE.getDefaultInstance(), GOLDEN_HAMMER.toStack(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
             entries.insertAfter(Items.DIAMOND_HOE.getDefaultInstance(), DIAMOND_HAMMER.toStack(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
             entries.insertAfter(Items.NETHERITE_HOE.getDefaultInstance(), NETHERITE_HAMMER.toStack(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
-            entries.insertAfter(NETHERITE_HAMMER.toStack(), NETHER_STEEL_PICKAXE.toStack(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
-            entries.insertAfter(NETHER_STEEL_PICKAXE.toStack(), ECHO_STEEL_PICKAXE.toStack(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
-            entries.insertAfter(ECHO_STEEL_PICKAXE.toStack(), NETHER_STEEL_HAMMER.toStack(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
-            entries.insertAfter(NETHER_STEEL_HAMMER.toStack(), ECHO_STEEL_HAMMER.toStack(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            entries.insertAfter(NETHERITE_HAMMER.toStack(), NETHER_STEEL_SHOVEL.toStack(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            entries.insertAfter(NETHER_STEEL_SHOVEL.toStack(), NETHER_STEEL_PICKAXE.toStack(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            entries.insertAfter(NETHER_STEEL_PICKAXE.toStack(), NETHER_STEEL_AXE.toStack(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            entries.insertAfter(NETHER_STEEL_AXE.toStack(), NETHER_STEEL_HOE.toStack(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            entries.insertAfter(NETHER_STEEL_HOE.toStack(), NETHER_STEEL_HAMMER.toStack(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            entries.insertAfter(NETHER_STEEL_HAMMER.toStack(), ECHO_STEEL_SHOVEL.toStack(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            entries.insertAfter(ECHO_STEEL_SHOVEL.toStack(), ECHO_STEEL_PICKAXE.toStack(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            entries.insertAfter(ECHO_STEEL_PICKAXE.toStack(), ECHO_STEEL_AXE.toStack(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            entries.insertAfter(ECHO_STEEL_AXE.toStack(), ECHO_STEEL_HOE.toStack(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            entries.insertAfter(ECHO_STEEL_HOE.toStack(), ECHO_STEEL_HAMMER.toStack(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
         }
         if(entries.getTabKey() == CreativeModeTabs.COMBAT) {
             entries.insertAfter(Items.WOODEN_SWORD.getDefaultInstance(), WOODEN_GREATSWORD.toStack(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
@@ -252,11 +284,16 @@ public interface ModItems {
             entries.insertAfter(Items.NETHERITE_SWORD.getDefaultInstance(), NETHERITE_GREATSWORD.toStack(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
             entries.insertAfter(NETHERITE_GREATSWORD.toStack(), NETHERITE_HALBERD.toStack(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
 
-            entries.insertAfter(NETHERITE_HALBERD.toStack(), NETHER_STEEL_GREATSWORD.toStack(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            entries.insertAfter(NETHERITE_HALBERD.toStack(), NETHER_STEEL_SWORD.toStack(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            entries.insertAfter(NETHER_STEEL_SWORD.toStack(), NETHER_STEEL_GREATSWORD.toStack(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
             entries.insertAfter(NETHER_STEEL_GREATSWORD.toStack(), NETHER_STEEL_HALBERD.toStack(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
 
-            entries.insertAfter(NETHER_STEEL_HALBERD.toStack(), ECHO_STEEL_GREATSWORD.toStack(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            entries.insertAfter(NETHER_STEEL_HALBERD.toStack(), ECHO_STEEL_SWORD.toStack(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            entries.insertAfter(ECHO_STEEL_SWORD.toStack(), ECHO_STEEL_GREATSWORD.toStack(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
             entries.insertAfter(ECHO_STEEL_GREATSWORD.toStack(), ECHO_STEEL_HALBERD.toStack(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+
+            entries.insertAfter(Items.NETHERITE_AXE.getDefaultInstance(), NETHER_STEEL_AXE.toStack(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            entries.insertAfter(NETHER_STEEL_AXE.toStack(), ECHO_STEEL_AXE.toStack(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
 
             entries.insertAfter(Items.NETHERITE_BOOTS.getDefaultInstance(), NETHER_STEEL_HELMET.toStack(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
             entries.insertAfter(NETHER_STEEL_HELMET.toStack(), NETHER_STEEL_CHESTPLATE.toStack(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
@@ -340,8 +377,17 @@ public interface ModItems {
                         output.accept(NETHER_STEEL_HALBERD);
                         output.accept(ECHO_STEEL_HALBERD);
 
+                        output.accept(NETHER_STEEL_SWORD);
+                        output.accept(NETHER_STEEL_SHOVEL);
                         output.accept(NETHER_STEEL_PICKAXE);
+                        output.accept(NETHER_STEEL_AXE);
+                        output.accept(NETHER_STEEL_HOE);
+
+                        output.accept(ECHO_STEEL_SWORD);
+                        output.accept(ECHO_STEEL_SHOVEL);
                         output.accept(ECHO_STEEL_PICKAXE);
+                        output.accept(ECHO_STEEL_AXE);
+                        output.accept(ECHO_STEEL_HOE);
 
                         output.accept(WOODEN_HAMMER);
                         output.accept(STONE_HAMMER);

@@ -8,6 +8,8 @@
     "extendedcombat:diamond_halberd",
     "extendedcombat:netherite_halberd",
     "extendedcombat:nether_steel_halberd",
-    "extendedcombat:echo_steel_halberd"
+    "extendedcombat:echo_steel_halberd",
+    "extendedcombat:nether_steel_axe",
+    "extendedcombat:echo_steel_axe"
   ]
 }

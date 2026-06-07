@@ -3,6 +3,8 @@
     "extendedcombat:echo_steel_greatsword",
     "extendedcombat:echo_steel_halberd",
     "extendedcombat:echo_steel_hammer",
-    "extendedcombat:echo_steel_pickaxe"
+    "extendedcombat:echo_steel_pickaxe",
+    "extendedcombat:nether_steel_hoe",
+    "extendedcombat:echo_steel_hoe"
   ]
 }
